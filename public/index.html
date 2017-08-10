@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Finder challenge</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Proxima+Nova" rel="stylesheet" type="text/css">
+    <link href="/styles/index.css" rel="stylesheet">
+  </head>
+  <body><span class="burguer-menu" onclick="toggleMenu()"></span>
+    <div class="finder-challegene-wrapper">
+      <header class="header-wrapper">
+        <div class="header-logo-wrapper">
+          <h1 class="header-logo">Finder challenge</h1>
+        </div>
+        <div class="header-search-wrapper">
+          <div class="header-search-helper">
+            <input class="header-search awesomplete" type="text" id="inputComplete" onkeydown="onkeydownSearch(event)" onkeyup="onChangeSearch()">
+            <input class="header-search-button" type="button" id="inputButton" value="Buscar" onClick="onSubmit()" disabled="true">
+          </div>
+          <div class="header-search-optional">
+            <input class="header-search-save" type="button" value="Guardar Búsqueda">
+          </div>
+        </div>
+      </header>
+      <div class="general-content-wrapper">
+        <aside class="filters-wrapper" id="menuToogle">
+          <div class="filter-wrapper">
+            <h3 class="filter-title">Búsquedas guardadas</h3>
+            <div class="filter-wrapper-helper">
+              <div class="filter-saved-wrapper is-selected"><span class="filter">Terror</span>
+                <div class="filter-action-wrapper"><span class="filter-action">Editar</span><span class="filter-action">Eliminar</span></div>
+              </div>
+              <div class="filter-saved-wrapper"><span class="filter">Search drama</span>
+                <div class="filter-action-wrapper"><span class="filter-action">Editar</span><span class="filter-action">Eliminar</span></div>
+              </div>
+              <div class="filter-saved-wrapper"><span class="filter">Comedias en ingles</span>
+                <div class="filter-action-wrapper"><span class="filter-action">Editar</span><span class="filter-action">Eliminar</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-wrapper">
+            <h3 class="filter-title">Categorías</h3>
+            <div class="filter-wrapper-helper" id="categories"><span class="filter gcc-category is-default-selected" onclick="select(event,&quot;category&quot;)" data-value="Todos">Todos</span><span class="filter gcc-category" onclick="select(event,&quot;category&quot;)" data-value="Terror">Terror</span><span class="filter gcc-category" onclick="select(event,&quot;category&quot;)" data-value="Comedia">Comedia</span><span class="filter gcc-category" onclick="select(event,&quot;category&quot;)" data-value="Drama">Drama</span></div>
+          </div>
+          <div class="filter-wrapper">
+            <h3 class="filter-title">Idioma</h3>
+            <div class="filter-wrapper-helper" id="lang"><span class="filter gcc-language is-default-selected" onclick="select(event,&quot;language&quot;)" data-value="Todos">Todos</span><span class="filter gcc-language" onclick="select(event,&quot;language&quot;)" data-value="Inglés">Inglés</span><span class="filter gcc-language" onclick="select(event,&quot;language&quot;)" data-value="Español">Español</span><span class="filter gcc-language" onclick="select(event,&quot;language&quot;)" data-value="Portugués">Portugués</span></div>
+          </div>
+          <div class="filter-wrapper">
+            <h3 class="filter-title">Publicación</h3>
+            <div class="filter-wrapper-helper" id="time"><span class="filter gcc-publication is-default-selected" onclick="select(event,&quot;publication&quot;)" data-value="Todos">Todos</span><span class="filter gcc-publication" onclick="select(event,&quot;publication&quot;)" data-value="Hoy">Hoy</span><span class="filter gcc-publication" onclick="select(event,&quot;publication&quot;)" data-value="Hace una semana">Hace una semana</span><span class="filter gcc-publication" onclick="select(event,&quot;publication&quot;)" data-value="Hace un año">Hace un año</span></div>
+          </div>
+          <div class="filter-wrapper">
+            <h3 class="filter-title">Presentación</h3>
+            <div class="filter-wrapper-helper" id="edition"><span class="filter gcc-presentation" onclick="select(event,&quot;presentation&quot;)" data-value="Impreso">Impreso</span><span class="filter gcc-presentation" onclick="select(event,&quot;presentation&quot;)" data-value="Digital">Digital</span><span class="filter gcc-presentation is-default-selected" onclick="select(event,&quot;presentation&quot;)" data-value="Impreso y digital">Impreso y digital</span></div>
+          </div>
+        </aside>
+        <content class="products-wrapper" id="renderProducts">
+          <div class="product-wrapper"><img class="product-img" alt="titulo de prueba">
+            <h2 class="product-title">titulo de prueba1</h2>
+            <p class="product-paragraft">el porro1</p>
+          </div>
+          <div class="product-wrapper"><img class="product-img" alt="titulo de prueba">
+            <h2 class="product-title">titulo de prueba2</h2>
+            <p class="product-paragraft">el porro2</p>
+          </div>
+          <div class="product-wrapper"><img class="product-img" alt="titulo de prueba3">
+            <h2 class="product-title">titulo de prueba3</h2>
+            <p class="product-paragraft">el porro3</p>
+          </div>
+        </content>
+      </div>
+      <footer class="pure-u-1"></footer>
+    </div>
+    <script src="/vendor/lodash/dist/lodash.min.js"></script>
+    <script src="/vendor/awesomplete/awesomplete.min.js"></script>
+    <script src="/scripts/variables.js"></script>
+    <script src="/scripts/global.js"></script>
+    <script src="/scripts/search-form.js"></script>
+    <script src="/scripts/app.js"></script>
+  </body>
+</html>
