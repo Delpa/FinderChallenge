@@ -27,6 +27,7 @@ function select(e,group){
 function Init(){
   loadJSON(JSON_FILE, function(data){
     jsonData = data;
+    renderPost(jsonData.data);
     var listSearch = [];
     _.map(data.data, function(item){
       listSearch=_.union(listSearch,[item.teaser,item.title])
